@@ -10,15 +10,15 @@
 
 int main(int argc, char *argv[])
 {
-	while (true) {
-		NSAlert *alert = [NSAlert alertWithMessageText: @"Swag!"
-										 defaultButton: @"Swag"
-									   alternateButton: nil
-										   otherButton: nil
-							 informativeTextWithFormat: @""];
-		[[NSRunningApplication currentApplication] activateWithOptions:NSApplicationActivateIgnoringOtherApps];
-		[alert runModal];
-		[NSThread sleepForTimeInterval:15];
-	}
-	return 0;
+    while (true) {
+        NSAlert *alert = [NSAlert alertWithMessageText: @"Swag!"
+                                         defaultButton: @"Swag"
+                                       alternateButton: nil
+                                           otherButton: nil
+                             informativeTextWithFormat: @""];
+        [[NSRunningApplication currentApplication] activateWithOptions:NSApplicationActivateIgnoringOtherApps];
+        [alert runModal];
+        [NSThread sleepForTimeInterval:15];
+    }
+    return 0;
 }
