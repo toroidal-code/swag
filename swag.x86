@@ -1,0 +1,15 @@
+# compile with gcc -m64 -x assembler swag.x86 -o swag
+	.file	"swag.x86"
+	.section	.data
+.SWAG:
+	.string	"Swag"
+	.text
+	.globl	main
+	.type	main,	@function
+main:
+_while:
+	mov	$.SWAG,	%rdi
+	call	puts
+	mov	$0xf,	%rdi
+	call	sleep
+	jmp	_while
