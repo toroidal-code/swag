@@ -3,7 +3,7 @@
 
 int main(){
     while (true) {
-	    std::cout << "SPAM" << std::endl;
+	    std::cout << "Swag" << std::endl;
 	    sleep(15);
     }
     return 0;
