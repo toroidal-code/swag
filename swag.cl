@@ -1,3 +1,3 @@
 (loop 
 	(write-line "Swag")
-    (sleep 15))
+	(sleep 15))
