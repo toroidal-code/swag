@@ -1,4 +1,4 @@
-spam:
-   @echo SPAM
+swag:
+   @echo Swag
    @sleep 15
    $(MAKE)
