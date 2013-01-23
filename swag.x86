@@ -1,15 +1,36 @@
+#
+# Will eventually replace `call sleep` with the actual syscall
+#
 # compile with gcc -m64 -x assembler swag.x86 -o swag
+#
 	.file	"swag.x86"
 	.section	.data
 .SWAG:
-	.string	"Swag"
+	.string	"Swag\n"
 	.text
 	.globl	main
 	.type	main,	@function
 main:
 _while:
-	mov	$.SWAG,	%rdi
-	call	puts
+	call	fn_write_swag
+	call	fn_sleep_15
+	jmp	_while
+	.globl	fn_write_swag
+	.type	fn_write_swag,	@function
+fn_write_swag:
+	mov	$0x1,	%rax
+	mov	$0x1,	%rdi
+	mov	$.SWAG,	%rsi
+	mov	$0x5,	%rdx
+	syscall
+	ret
+	.globl	fn_sleep_15
+	.type	fn_sleep_15,	@function
+fn_sleep_15:
+#	mov	$162,	%rax
+#	mov	%rbp,	%rbx
+#	add	$0x10,	%rbx
+#	syscall
 	mov	$0xf,	%rdi
 	call	sleep
-	jmp	_while
+	ret
