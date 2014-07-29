@@ -4,7 +4,7 @@ fn main() {
     let mut timer = Timer::new().unwrap();
 
     loop {
-        println("hello, world");
+        println("swag");
         timer.sleep(15000);
     }
 }
